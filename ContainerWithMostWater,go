@@ -1,0 +1,24 @@
+package gopractice
+
+import "math"
+
+func maxArea(height []int) int {
+	start := 0
+	end := len(height) - 1
+	maxArea := math.MinInt64
+	for start != end {
+		//fmt.Printf("%v %v\n", start, end)
+		h := height[start]
+		if height[start] > height[end] {
+			h = height[end]
+			end--
+		} else {
+			start++
+		}
+		area := h * (end - start + 1)
+		if area > maxArea {
+			maxArea = area
+		}
+	}
+	return maxArea
+}
