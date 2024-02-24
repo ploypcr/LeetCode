@@ -1,6 +1,6 @@
 package gopractice
 
-func removeDuplicates(nums []int) int {
+func removeDuplicates2(nums []int) int {
     numElements := make(map[int]int)
 	res := 0
 	
